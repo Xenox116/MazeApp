@@ -30,4 +30,12 @@
         tools:layout_editor_absoluteX="222dp"
         tools:layout_editor_absoluteY="400dp" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HE TERMINADO DISEÑO DE PANTALLA"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="251dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
