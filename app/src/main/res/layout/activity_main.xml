@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo2___copia"
+    tools:context=".GUI.MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="111dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="150dp"
+        android:src="@drawable/logocompleto_blanco___2____copia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="284dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="31dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:backgroundTint="#EBD7F4"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="CREAR COMANDA"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:backgroundTint="#EBD7F4"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="VER COMANDAS"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="83dp"
+        android:text="Bienvenido, escoge una opción"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
