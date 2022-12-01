@@ -26,7 +26,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="he crado la abse de dadot"
         tools:layout_editor_absoluteX="222dp"
         tools:layout_editor_absoluteY="400dp" />
 
