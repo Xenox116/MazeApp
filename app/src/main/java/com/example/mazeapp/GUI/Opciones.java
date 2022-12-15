@@ -8,24 +8,32 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import com.example.mazeapp.R;
 
-public class Login extends AppCompatActivity {
-    Button btAcceder;
+public class Opciones extends AppCompatActivity {
+    String user;
+    Button btMenu;
+    ImageButton btFin;
+    LinearLayout l1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_opciones);
         getSupportActionBar().hide();
-        btAcceder = findViewById(R.id.btAcceder);
+        //if(String user == null)//abre login;{
+        l1 = findViewById(R.id.l1);
+        btMenu = findViewById(R.id.btCrear);
+        btFin = findViewById(R.id.btVolver);
     }
-
-    public void login(View v){
-        Intent opc = new Intent(getApplicationContext(), Opciones.class);
+    public void volver(View v){ finish();}
+    public void menu(View v){
+        Intent opc = new Intent(getApplicationContext(), CrearComanda.class);
         startActivity(opc);
     }
 }
