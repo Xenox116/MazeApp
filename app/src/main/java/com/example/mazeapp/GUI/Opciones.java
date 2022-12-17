@@ -35,4 +35,8 @@ public class Opciones extends AppCompatActivity {
         Intent opc = new Intent(getApplicationContext(), CrearComanda.class);
         startActivity(opc);
     }
+    public void historial(View v){
+        Intent opc = new Intent(getApplicationContext(), HistorialComandas.class);
+        startActivity(opc);
+    }
 }
