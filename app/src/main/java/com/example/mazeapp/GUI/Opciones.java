@@ -31,12 +31,9 @@ public class Opciones extends AppCompatActivity {
         btVolver = findViewById(R.id.btVolver);
     }
     public void volver(View v){ finish();}
+
     public void menu(View v){
         Intent opc = new Intent(getApplicationContext(), CrearComanda.class);
-        startActivity(opc);
-    }
-    public void historial(View v){
-        Intent opc = new Intent(getApplicationContext(), HistorialComandas.class);
         startActivity(opc);
     }
 }

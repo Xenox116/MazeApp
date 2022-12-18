@@ -1,21 +1,16 @@
 package com.example.mazeapp.GUI;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.app.AlertDialog;
-
-import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
-
 import android.text.InputType;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mazeapp.R;
 import com.example.mazeapp.entidades.Producto;
@@ -23,17 +18,21 @@ import com.example.mazeapp.entidades.Producto;
 import java.util.ArrayList;
 
 public class CrearComanda extends AppCompatActivity {
-    ArrayList<Producto> comanda=new ArrayList<>();
-    Button addcafeleche,addcapuccino,adddescafe,addespreso,addcoca,addfanta,addaquarius,addbitterkas,addfresa,
-        addvainilla,addchocolte,addarrozleche,addredvelvet,addbizcocho,addflan,addnegro,addrojo,addteleche,
-        addverde,addgilda,addmoruno,addjamon,addtortilla;
+    public static ArrayList<Producto> comanda;
+    public static CrearComanda me;
+    Button addcafeleche, addcapuccino, adddescafe, addespreso, addcoca, addfanta, addaquarius, addbitterkas, addfresa,
+            addvainilla, addchocolte, addarrozleche, addredvelvet, addbizcocho, addflan, addnegro, addrojo, addteleche,
+            addverde, addgilda, addmoruno, addjamon, addtortilla, btnCancelar, btnConfirmar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_comanda);
 
-        addcafeleche=findViewById(R.id.add1);
+        comanda = new ArrayList<Producto>();
+        me = this;
+
+        addcafeleche = findViewById(R.id.add1);
         addcafeleche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +41,7 @@ public class CrearComanda extends AppCompatActivity {
                 addcafeleche.setEnabled(false);
             }
         });
-        addcapuccino=findViewById(R.id.add2);
+        addcapuccino = findViewById(R.id.add2);
         addcapuccino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +50,7 @@ public class CrearComanda extends AppCompatActivity {
                 addcapuccino.setEnabled(false);
             }
         });
-        adddescafe=findViewById(R.id.add3);
+        adddescafe = findViewById(R.id.add3);
         adddescafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +59,7 @@ public class CrearComanda extends AppCompatActivity {
                 adddescafe.setEnabled(false);
             }
         });
-        addespreso=findViewById(R.id.add4);
+        addespreso = findViewById(R.id.add4);
         addespreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +68,7 @@ public class CrearComanda extends AppCompatActivity {
                 addespreso.setEnabled(false);
             }
         });
-        addcoca=findViewById(R.id.add5);
+        addcoca = findViewById(R.id.add5);
         addcoca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +77,7 @@ public class CrearComanda extends AppCompatActivity {
                 addcoca.setEnabled(false);
             }
         });
-        addfanta=findViewById(R.id.add6);
+        addfanta = findViewById(R.id.add6);
         addfanta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +86,7 @@ public class CrearComanda extends AppCompatActivity {
                 addfanta.setEnabled(false);
             }
         });
-        addaquarius=findViewById(R.id.add7);
+        addaquarius = findViewById(R.id.add7);
         addaquarius.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,7 +95,7 @@ public class CrearComanda extends AppCompatActivity {
                 addaquarius.setEnabled(false);
             }
         });
-        addbitterkas=findViewById(R.id.add8);
+        addbitterkas = findViewById(R.id.add8);
         addbitterkas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,7 +104,7 @@ public class CrearComanda extends AppCompatActivity {
                 addbitterkas.setEnabled(false);
             }
         });
-        addfresa=findViewById(R.id.add9);
+        addfresa = findViewById(R.id.add9);
         addfresa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,7 +113,7 @@ public class CrearComanda extends AppCompatActivity {
                 addfresa.setEnabled(false);
             }
         });
-        addvainilla=findViewById(R.id.add10);
+        addvainilla = findViewById(R.id.add10);
         addvainilla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,7 +122,7 @@ public class CrearComanda extends AppCompatActivity {
                 addvainilla.setEnabled(false);
             }
         });
-        addchocolte=findViewById(R.id.add11);
+        addchocolte = findViewById(R.id.add11);
         addchocolte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,7 +131,7 @@ public class CrearComanda extends AppCompatActivity {
                 addchocolte.setEnabled(false);
             }
         });
-        addarrozleche=findViewById(R.id.add12);
+        addarrozleche = findViewById(R.id.add12);
         addarrozleche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,7 +140,7 @@ public class CrearComanda extends AppCompatActivity {
                 addarrozleche.setEnabled(false);
             }
         });
-        addredvelvet=findViewById(R.id.add13);
+        addredvelvet = findViewById(R.id.add13);
         addredvelvet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,7 +149,7 @@ public class CrearComanda extends AppCompatActivity {
                 addredvelvet.setEnabled(false);
             }
         });
-        addbizcocho=findViewById(R.id.add14);
+        addbizcocho = findViewById(R.id.add14);
         addbizcocho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -159,7 +158,7 @@ public class CrearComanda extends AppCompatActivity {
                 addbizcocho.setEnabled(false);
             }
         });
-        addflan=findViewById(R.id.add17);
+        addflan = findViewById(R.id.add17);
         addflan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,7 +167,7 @@ public class CrearComanda extends AppCompatActivity {
                 addflan.setEnabled(false);
             }
         });
-        addnegro=findViewById(R.id.add18);
+        addnegro = findViewById(R.id.add18);
         addnegro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -177,7 +176,7 @@ public class CrearComanda extends AppCompatActivity {
                 addnegro.setEnabled(false);
             }
         });
-        addrojo=findViewById(R.id.add19);
+        addrojo = findViewById(R.id.add19);
         addrojo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -186,7 +185,7 @@ public class CrearComanda extends AppCompatActivity {
                 addrojo.setEnabled(false);
             }
         });
-        addteleche=findViewById(R.id.add20);
+        addteleche = findViewById(R.id.add20);
         addteleche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -195,7 +194,7 @@ public class CrearComanda extends AppCompatActivity {
                 addteleche.setEnabled(false);
             }
         });
-        addverde=findViewById(R.id.add21);
+        addverde = findViewById(R.id.add21);
         addverde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -204,7 +203,7 @@ public class CrearComanda extends AppCompatActivity {
                 addverde.setEnabled(false);
             }
         });
-        addgilda=findViewById(R.id.add22);
+        addgilda = findViewById(R.id.add22);
         addgilda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -213,7 +212,7 @@ public class CrearComanda extends AppCompatActivity {
                 addgilda.setEnabled(false);
             }
         });
-        addmoruno=findViewById(R.id.add23);
+        addmoruno = findViewById(R.id.add23);
         addmoruno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -222,7 +221,7 @@ public class CrearComanda extends AppCompatActivity {
                 addmoruno.setEnabled(false);
             }
         });
-        addjamon=findViewById(R.id.add24);
+        addjamon = findViewById(R.id.add24);
         addjamon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -231,7 +230,7 @@ public class CrearComanda extends AppCompatActivity {
                 addjamon.setEnabled(false);
             }
         });
-        addtortilla=findViewById(R.id.add25);
+        addtortilla = findViewById(R.id.add25);
         addtortilla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -240,6 +239,17 @@ public class CrearComanda extends AppCompatActivity {
                 addtortilla.setEnabled(false);
             }
         });
+
+        btnCancelar = findViewById(R.id.btCancelar);
+        btnConfirmar = findViewById(R.id.btAceptar);
+    }
+
+    public void onClick(View view) {
+        if (view == btnCancelar) finish();
+        if (view == btnConfirmar) {
+            Intent opc = new Intent(getApplicationContext(), ConfirmarComanda.class);
+            startActivity(opc);
+        }
     }
 
     private void hacerPedido(int cod, String nom, double pre) {

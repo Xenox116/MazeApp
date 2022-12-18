@@ -20,6 +20,8 @@ import java.sql.Statement;
 public class Login extends AppCompatActivity {
     Button btAcceder;
 
+    public static int userId;
+
     EditText etUser;
     EditText etPassw;
 
@@ -54,13 +56,17 @@ public class Login extends AppCompatActivity {
                     .executeQuery("select * from Usuarios where " +
                             "Usuario ='" + user + "' And " +
                             "Password ='" + passw + "'");
-            boolean res = resultSet.next();
+            boolean res = false;
 
+            while (resultSet.next()) {
+                userId = resultSet.getInt("IdUsuario");
+                res = true;
+            }
             if (res) {
                 Intent opc = new Intent(getApplicationContext(), Opciones.class);
                 startActivity(opc);
 
-                Toast.makeText(getApplicationContext(), "Bienvenido " + user, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Bienvenido " + user + userId, Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }

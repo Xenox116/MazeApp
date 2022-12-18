@@ -47,16 +47,6 @@
             android:layout_width="match_parent"
             android:layout_height="12dp"/>
 
-        <Button
-            android:id="@+id/btConsultar"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:backgroundTint="#EBD7F4"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:onClick="historial"
-            android:text="VER COMANDAS"
-            android:textColor="#000000"
-            android:textSize="20sp" />
     </LinearLayout>
 
     <TextView

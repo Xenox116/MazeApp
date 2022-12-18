@@ -705,7 +705,8 @@
         android:layout_marginStart="16dp"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/btAceptar"
@@ -714,6 +715,7 @@
         android:layout_marginEnd="16dp"
         android:text="Confirmar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

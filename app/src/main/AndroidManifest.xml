@@ -16,10 +16,7 @@
         android:theme="@style/Theme.MazeApp.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".HistorialComandas"
-            android:exported="false" />
-        <activity
-            android:name=".ConfirmarComanda"
+            android:name=".GUI.ConfirmarComanda"
             android:exported="false" />
         <activity
             android:name=".GUI.Opciones"
