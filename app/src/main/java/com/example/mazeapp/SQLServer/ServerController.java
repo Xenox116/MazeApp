@@ -10,8 +10,8 @@ public class ServerController {
 
     private String error = "OK";
 
-    //private String ip = "192.168.1.112";
-    private String ip = "192.168.1.134"; //ip de PC Jie
+    private String ip = "192.168.1.112";
+    //private String ip = "192.168.1.134"; //ip de PC Jie
     //private String ip = "192.168.1.115"; //portatil Jie
     //private String ip="192.168.56.1"; //ip olatz
     private String port = "1433";

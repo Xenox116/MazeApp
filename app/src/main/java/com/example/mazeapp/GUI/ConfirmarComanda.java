@@ -97,4 +97,9 @@ public class ConfirmarComanda extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "ok2", Toast.LENGTH_SHORT).show();
     }
+    public void borrar(View v){
+        long pos = listaComanda.getSelectedItemId();
+        CrearComanda.comanda.remove(pos);
+    }
+
 }
