@@ -3,6 +3,7 @@ package com.example.mazeapp.GUI;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -30,6 +31,8 @@ public class ConfirmarComanda extends AppCompatActivity {
 
     Statement statement;
 
+    int pos=-1;
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,14 @@ public class ConfirmarComanda extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        listaComanda = findViewById(R.id.listaComanda);
+        listaComanda.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView adapterView, View view, int i, long l) {
+                pos = i;
+            }
+        });
 
         cargarListView();
     }
@@ -58,7 +69,6 @@ public class ConfirmarComanda extends AppCompatActivity {
             productosShow.add(item.Nombre + " " + item.Cantidad + " ud. " + item.Precio + "€");
         }
 
-        listaComanda = findViewById(R.id.listaComanda);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, productosShow);
         listaComanda.setAdapter(adapter);
     }
@@ -75,8 +85,6 @@ public class ConfirmarComanda extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void enviar() {
         int id = (int) (Math.random() * 100000);
-
-
         LocalDate date = LocalDate.now();
         String fecha = date.toString();
         try {
@@ -95,11 +103,16 @@ public class ConfirmarComanda extends AppCompatActivity {
             }
         }
 
-        Toast.makeText(getApplicationContext(), "ok2", Toast.LENGTH_SHORT).show();
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void borrar(View v){
-        long pos = listaComanda.getSelectedItemId();
+        Toast.makeText(getApplicationContext(), pos+"", Toast.LENGTH_SHORT).show();
+
         CrearComanda.comanda.remove(pos);
+
+        lineasComanda = new ArrayList<>();
+        productosShow = new ArrayList<>();
+        cargarListView();
     }
 
 }
