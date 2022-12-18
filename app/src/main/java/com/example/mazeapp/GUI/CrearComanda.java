@@ -38,7 +38,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(6,"Cafe con leche");
+                hacerPedido(6,"Cafe con leche", 1.2);
                 addcafeleche.setEnabled(false);
             }
         });
@@ -47,7 +47,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(8,"Capuccino");
+                hacerPedido(8,"Capuccino", 1.8);
                 addcapuccino.setEnabled(false);
             }
         });
@@ -56,7 +56,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(7,"Descafeinado");
+                hacerPedido(7,"Descafeinado", 1.2);
                 adddescafe.setEnabled(false);
             }
         });
@@ -65,7 +65,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(9,"Espresso");
+                hacerPedido(9,"Espresso", 1);
                 addespreso.setEnabled(false);
             }
         });
@@ -74,7 +74,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(1,"CocaCola");
+                hacerPedido(1,"CocaCola", 2);
                 addcoca.setEnabled(false);
             }
         });
@@ -83,7 +83,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(3,"Fanta naranja");
+                hacerPedido(3,"Fanta naranja", 1.5);
                 addfanta.setEnabled(false);
             }
         });
@@ -92,7 +92,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(2,"Aquarius");
+                hacerPedido(2,"Aquarius", 2);
                 addaquarius.setEnabled(false);
             }
         });
@@ -101,7 +101,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(4,"Bitter Kas");
+                hacerPedido(4,"Bitter Kas", 2.5);
                 addbitterkas.setEnabled(false);
             }
         });
@@ -110,7 +110,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(22,"Batido Fresa");
+                hacerPedido(22,"Batido Fresa", 2.5);
                 addfresa.setEnabled(false);
             }
         });
@@ -119,7 +119,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(23,"Batido Vainilla");
+                hacerPedido(23,"Batido Vainilla", 2.5);
                 addvainilla.setEnabled(false);
             }
         });
@@ -128,7 +128,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(21,"Batido Chocolate");
+                hacerPedido(21,"Batido Chocolate", 2.5);
                 addchocolte.setEnabled(false);
             }
         });
@@ -137,7 +137,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(20,"Arroz leche");
+                hacerPedido(20,"Arroz leche", 1);
                 addarrozleche.setEnabled(false);
             }
         });
@@ -146,7 +146,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(16,"Red Velvet");
+                hacerPedido(16,"Red Velvet", 2.5);
                 addredvelvet.setEnabled(false);
             }
         });
@@ -155,7 +155,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(17,"Bizcochocolate");
+                hacerPedido(17,"Bizcochocolate", 2.5);
                 addbizcocho.setEnabled(false);
             }
         });
@@ -164,7 +164,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(19,"Flan");
+                hacerPedido(19,"Flan", 1.5);
                 addflan.setEnabled(false);
             }
         });
@@ -173,7 +173,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(26,"Te Negro");
+                hacerPedido(26,"Te Negro", 1.5);
                 addnegro.setEnabled(false);
             }
         });
@@ -182,7 +182,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(27,"Te Rojo");
+                hacerPedido(27,"Te Rojo", 1.5);
                 addrojo.setEnabled(false);
             }
         });
@@ -191,7 +191,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(29,"Te Leche");
+                hacerPedido(29,"Te Leche", 1.8);
                 addteleche.setEnabled(false);
             }
         });
@@ -200,7 +200,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(25,"Te Verde");
+                hacerPedido(25,"Te Verde", 1.5);
                 addverde.setEnabled(false);
             }
         });
@@ -209,7 +209,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(14,"Gilda");
+                hacerPedido(14,"Gilda", 1);
                 addgilda.setEnabled(false);
             }
         });
@@ -218,7 +218,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(15,"Moruno");
+                hacerPedido(15,"Moruno", 1.5);
                 addmoruno.setEnabled(false);
             }
         });
@@ -227,7 +227,7 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(13,"Jamon");
+                hacerPedido(13,"Jamon", 1);
                 addjamon.setEnabled(false);
             }
         });
@@ -236,13 +236,13 @@ public class CrearComanda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                hacerPedido(12,"Tortilla");
+                hacerPedido(12,"Tortilla", 1.8);
                 addtortilla.setEnabled(false);
             }
         });
     }
 
-    private void hacerPedido(int cod, String nom) {
+    private void hacerPedido(int cod, String nom, double pre) {
         int[] pedido = new int[1];
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(CrearComanda.this);
         final EditText edittext = new EditText(CrearComanda.this);
@@ -255,7 +255,7 @@ public class CrearComanda extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String Strpedido = edittext.getText().toString();
                 pedido[0] =Integer.parseInt(Strpedido.toString());
-                Producto p1=new Producto(cod,pedido[0],nom);
+                Producto p1=new Producto(cod,pedido[0],nom,pre);
                 comanda.add(p1);
                 Log.i("CrearComanda", "Finalizado");
             }

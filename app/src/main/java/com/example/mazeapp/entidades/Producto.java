@@ -3,12 +3,14 @@ package com.example.mazeapp.entidades;
 public class Producto {
     int Codigo;
     int Pedido;
+    double Precio;
     String Nombre;
 
-    public Producto(int cod, int ped, String nom){
+    public Producto(int cod, int ped, String nom, double pre){
         Codigo=cod;
         Pedido=ped;
         Nombre=nom;
+        Precio=pre;
     }
 
     public int getCodigo() {
