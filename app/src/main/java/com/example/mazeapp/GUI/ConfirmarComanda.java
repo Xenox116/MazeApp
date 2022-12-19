@@ -2,6 +2,7 @@ package com.example.mazeapp.GUI;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class ConfirmarComanda extends AppCompatActivity {
     ImageButton btsalir2;
@@ -29,11 +32,12 @@ public class ConfirmarComanda extends AppCompatActivity {
     ArrayList<LineaComanda> lineasComanda = new ArrayList<>();
     ArrayList<String> productosShow = new ArrayList<>();
 
+    Date now;
+
     Statement statement;
 
     int pos=-1;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,14 +58,15 @@ public class ConfirmarComanda extends AppCompatActivity {
             }
         });
 
+        now = Calendar.getInstance().getTime();
+
         cargarListView();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void cargarListView() {
         for (Producto item :
                 CrearComanda.comanda) {
-            lineasComanda.add(new LineaComanda(0, item.getCodigo(), item.getNombre(), item.getPedido(), item.getPedido() * item.getPrecio(), LocalDate.now()));
+            lineasComanda.add(new LineaComanda(0, item.getCodigo(), item.getNombre(), item.getPedido(), item.getPedido() * item.getPrecio(), now));
         }
 
         for (LineaComanda item :
@@ -77,23 +82,20 @@ public class ConfirmarComanda extends AppCompatActivity {
         finish();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void enviarComanda(View v) {
         enviar();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void enviar() {
         int id = (int) (Math.random() * 100000);
-        LocalDate date = LocalDate.now();
-        String fecha = date.toString();
+        java.sql.Date fecha = new java.sql.Date(now.getTime());
+        Log.d("*********", fecha.toString());
         try {
             statement.execute("insert into Comandas values(" + id + "," + fecha + ",2," + Login.userId + ",0 )");
         } catch (SQLException e) {
             e.printStackTrace();
             return;
         }
-
         for (LineaComanda item :
                 lineasComanda) {
             try {
@@ -102,12 +104,12 @@ public class ConfirmarComanda extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
+        Toast.makeText(getApplicationContext(),"comando enviado",Toast.LENGTH_SHORT).show();
+        CrearComanda.me.finish();
+        this.finish();
     }
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void borrar(View v){
-        Toast.makeText(getApplicationContext(), pos+"", Toast.LENGTH_SHORT).show();
 
+    public void borrar(View v){
         CrearComanda.comanda.remove(pos);
 
         lineasComanda = new ArrayList<>();

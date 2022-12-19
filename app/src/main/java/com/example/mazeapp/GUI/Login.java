@@ -2,6 +2,7 @@ package com.example.mazeapp.GUI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,9 +14,11 @@ import com.example.mazeapp.R;
 import com.example.mazeapp.SQLServer.ServerController;
 import com.example.mazeapp.SQLite.DBHelper;
 
+import java.util.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
 
 public class Login extends AppCompatActivity {
     Button btAcceder;
@@ -28,12 +31,8 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //
         DBHelper.liteConn = new DBHelper(getApplicationContext());
-
-        ServerController conn = new ServerController();
-
-        Toast.makeText(getApplicationContext(), conn.getError(), Toast.LENGTH_SHORT).show();
+        new ServerController();
         //
         setContentView(R.layout.activity_login);
         btAcceder = findViewById(R.id.btAcceder);
